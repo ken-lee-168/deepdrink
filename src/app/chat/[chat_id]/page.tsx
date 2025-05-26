@@ -6,7 +6,6 @@ import EastIcon from "@mui/icons-material/East";
 
 export default function Page() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: "/api/chat",
     onError: (error) => {
       console.error("Chat error:", error);
     },
