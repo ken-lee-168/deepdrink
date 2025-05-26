@@ -14,7 +14,7 @@ export default function Page() {
     },
   });
 
-  const endRef = useRef<HTMLDirectoryElement>(null);
+  const endRef = useRef<HTMLDivElement>(null);
   const [model, setModel] = useState("deepseek-r1");
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function Page() {
     }
   }, []);
 
-  const handleModelChange = (e) => {
+  const handleModelChange = () => {
     console.log({ model });
     setModel(model === "deepseek-r1" ? "deepseek-v3" : "deepseek-r1");
   };
