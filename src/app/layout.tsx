@@ -28,6 +28,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
+          suppressHydrationWarning
           className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row`}
         >
           <div className="w-1/5 h-screen bg-gray-50">

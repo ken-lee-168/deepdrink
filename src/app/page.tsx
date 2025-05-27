@@ -2,7 +2,7 @@
 import { useState } from "react";
 import EastIcon from "@mui/icons-material/East";
 import { useUser } from "@clerk/nextjs";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [input, setInput] = useState("");
