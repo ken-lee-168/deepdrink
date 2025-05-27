@@ -28,7 +28,6 @@ export async function POST(req: Request) {
     });
     return result.toDataStreamResponse();
   } catch (error) {
-    console.error("Chat API Error:", error);
     return new Response(
       JSON.stringify({
         error: error instanceof Error ? error.message : "An error occurred",
