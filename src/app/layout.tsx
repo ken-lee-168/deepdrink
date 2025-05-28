@@ -3,6 +3,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navibar from "./components/Navibar";
+import QueryClientProvider from "./components/QueryClientProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,18 +27,20 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body
-          suppressHydrationWarning
-          className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row`}
-        >
-          <div className="w-1/5 h-screen bg-gray-50">
-            <Navibar />
-          </div>
+      <QueryClientProvider>
+        <html lang="en">
+          <body
+            suppressHydrationWarning
+            className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-row`}
+          >
+            <div className="w-1/5 h-screen bg-gray-50">
+              <Navibar />
+            </div>
 
-          {children}
-        </body>
-      </html>
+            {children}
+          </body>
+        </html>
+      </QueryClientProvider>
     </ClerkProvider>
   );
 }
